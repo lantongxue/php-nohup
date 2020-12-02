@@ -4,7 +4,7 @@ namespace lantongxue\nohup;
 
 class Process
 {
-    protected $pid;
+    protected $pid = -1;
 
     public function __construct($pid)
     {
