@@ -23,7 +23,7 @@ class Process
     public function isRunning()
     {
         if (OS::isWin()) {
-            $cmd = "wmic process get processid | find \"{$this->pid}\"";
+            $cmd = "wmic process get processid | findstr \"{$this->pid}\"";
             $res = array_filter(explode(" ", shell_exec($cmd)));
             return count($res) > 0 && $this->pid == reset($res);
         } else {
